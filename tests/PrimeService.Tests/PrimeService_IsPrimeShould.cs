@@ -1,9 +1,10 @@
 ﻿using System;
 using Prime.Services;
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Prime.UnitTests.Services
 {
+    [TestClass]
     public class PrimeService_IsPrimeShould
     {
         private readonly PrimeService _primeService;
@@ -12,23 +13,23 @@ namespace Prime.UnitTests.Services
              _primeService = new PrimeService();
          }
 
-        [Fact]
+        [TestMethod]
         public void ReturnFalseGivenValueOf1()
         {
             var result = _primeService.IsPrime(1);
 
-            Assert.False(result, $"1 should not be prime");
+            Assert.IsFalse(result, $"1 should not be prime");
         }
 
-        [Theory]
-        [InlineData(-1)]
-        [InlineData(0)]
-        [InlineData(1)]
+        [DataTestMethod]
+        [DataRow(-1)]
+        [DataRow(0)]
+        [DataRow(1)]
         public void ReturnFalseGivenValuesLessThan2(int value)
         {
             var result = _primeService.IsPrime(value);
 
-            Assert.False(result, $"{value} should not be prime");
+            Assert.IsFalse(result, $"{value} should not be prime");
         }
     }
 }

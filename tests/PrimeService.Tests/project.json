@@ -5,13 +5,13 @@
   },
   "dependencies": {
     "System.Runtime.Serialization.Primitives": "4.3.0",
-    "xunit": "2.1.0",
-    "dotnet-test-xunit": "1.0.0-rc2-192208-24",
+    "MSTest.TestFramework": "1.1.11",
+    "dotnet-test-mstest": "1.1.2-preview",
     "PrimeService": {
       "target": "project"
     }
   },
-  "testRunner": "xunit",
+  "testRunner": "mstest",
   "frameworks": {
     "netcoreapp1.1": {
       "dependencies": {
